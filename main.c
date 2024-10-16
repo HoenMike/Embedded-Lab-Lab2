@@ -45,7 +45,8 @@ void ProcessUARTCommand(void) {
     }
 }
 
-int main(void) {
+int main(void) 
+{
     UART_Initialize(9600);
     LedInitialize();
     Joystick_Initialize();
