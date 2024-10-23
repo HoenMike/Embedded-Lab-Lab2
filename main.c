@@ -4,6 +4,7 @@
 #include "uart.h"
 #include <string.h>
 #include <stdio.h> // Include for snprintf
+
 #define UART_BAUD_RATE 9600
 
 int main(void)
@@ -28,14 +29,14 @@ int main(void)
         int adcValue = ADC_GetValue();
 
         // Debug: Send ADC value through UART
-        snprintf(buffer, BUFFER_SIZE, "ADC Value: %d\r\n", adcValue);
+        snprintf(buffer, BUFFER_SIZE, "%d\r\n", adcValue);
         UART_Send(buffer, strlen(buffer));
 
         // Display 8 high order bits on LEDs
         unsigned char ledValue = (adcValue >> 4) & 0xFF;
 
-        // Debug: Send LED value through UART
-        snprintf(buffer, BUFFER_SIZE, "LED Value: %02X\r\n", ledValue);
+        // Debug: Send LED value in decimal through UART
+        snprintf(buffer, BUFFER_SIZE, "%d\r\n", ledValue);
         UART_Send(buffer, strlen(buffer));
 
         // Turn off all LEDs first

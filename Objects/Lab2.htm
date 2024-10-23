@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Lab2.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Lab2.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Wed Oct 23 08:42:28 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Wed Oct 23 08:52:24 2024
 <BR><P>
 <H3>Maximum Stack Usage =        324 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1048,7 +1048,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_postli_1
 </UL>
 
-<P><STRONG><a name="[3f]"></a>main</STRONG> (Thumb, 204 bytes, Stack size 104 bytes, main.o(.text.main))
+<P><STRONG><a name="[3f]"></a>main</STRONG> (Thumb, 200 bytes, Stack size 104 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240 + Unknown Stack Size
 <LI>Call Chain = main &rArr; snprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -1071,10 +1071,10 @@ Global Symbols
 <P><STRONG><a name="[cc]"></a>os_error</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, rtx_conf_cm.o(.text.os_error))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = os_error
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sysTimerTick
+<BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psq_enq
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sysTimerTick
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_mbx_psh
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_stk_check
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psq_enq
 </UL>
 
 <P><STRONG><a name="[92]"></a>_btod_d2e</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, btod.o(CL$$btod_d2e))
@@ -1180,8 +1180,8 @@ Global Symbols
 <P><STRONG><a name="[b4]"></a>isr_mbx_receive</STRONG> (Thumb, 86 bytes, Stack size 8 bytes, rt_mailbox.o(i.isr_mbx_receive))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = isr_mbx_receive &rArr; rt_psq_enq &rArr; os_error
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psh_req
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psq_enq
+<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psq_enq
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psh_req
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;isrMessageGet
 </UL>
@@ -1189,8 +1189,8 @@ Global Symbols
 <P><STRONG><a name="[b7]"></a>isr_mbx_send</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, rt_mailbox.o(i.isr_mbx_send))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = isr_mbx_send &rArr; rt_psq_enq &rArr; os_error
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psh_req
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psq_enq
+<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psq_enq
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psh_req
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;isrMessagePut
 </UL>
@@ -1714,9 +1714,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_g
+<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_f
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_g
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_e
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_f
 </UL>
 
 <P><STRONG><a name="[51]"></a>_printf_fp_hex</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, printf2.o(x$fpl$printf2))
