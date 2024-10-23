@@ -1,35 +1,75 @@
-#include "LPC17xx.h"
-#include "ADC.h"
-#include "led.h"
+#include "cmsis_os.h" // ARM::CMSIS:RTOS:Keil RTX
+#include "LPC17xx.h"  // Device header
 #include "uart.h"
-#include <string.h>
-#include <stdio.h> // Include for snprintf
+#include "Led.h"
+#include "Joystick.h"
+#include <string.h> // Include for strlen
 
-#define UART_BAUD_RATE 9600
+void ProcessJoystick(void)
+{
+    char *message;
+
+    switch (Joystick_Get_Status())
+    {
+    case JOYSTICK_UP:
+        message = "IU\r\n";
+        UART_Send(message, strlen(message));
+        break;
+    case JOYSTICK_DOWN:
+        message = "Electrical Engineering\r\n";
+        UART_Send(message, strlen(message));
+        break;
+    case JOYSTICK_LEFT:
+        message = "Embedded System\r\n";
+        UART_Send(message, strlen(message));
+        break;
+    case JOYSTICK_RIGHT:
+        message = "Hoang, Phu\r\n"; // Replace with your actual name
+        UART_Send(message, strlen(message));
+        break;
+    case JOYSTICK_CENTER:
+        // You can add functionality for the center button if needed
+        break;
+    default:
+        // No joystick action
+        break;
+    }
+}
+
+void ProcessUARTCommand(void)
+{
+    if (UART_Buffer_Count > 0)
+    {
+        uint8_t command = UART_Buffer[UART_Buffer_Count - 1];
+        uint8_t intention = (command >> 4) & 0x0F;
+        uint8_t target = command & 0x0F;
+
+        if (target < 8)
+        { // Valid LED index
+            if (intention == 1)
+            {
+                LedOn(target);
+            }
+            else if (intention == 2)
+            {
+                LedOff(target);
+            }
+        }
+
+        UART_Buffer_Count = 0; // Reset buffer count after processing
+    }
+}
 
 int main(void)
 {
     UART_Initialize(9600);
     LedInitialize();
+    Joystick_Initialize();
 
     while (1)
     {
-        if (UART_Buffer_Count > 0)
-        {
-            if (UART_Buffer[UART_Buffer_Count - 1] == 0xFF)
-            {
-                for (int i = 0; i < 8; i++)
-                    LedOn(i);
-                        UART_Send("\nLEDs are turned on", 19);
-                UART_Buffer_Count = 0;
-            }
-            else if (UART_Buffer[UART_Buffer_Count - 1] == 0xF0)
-            {
-                for (int i = 0; i < 8; i++)
-                    LedOff(i);
-                        UART_Send("\nLEDs are turned off", 20);
-                UART_Buffer_Count = 0;
-            }
-        }
+        ProcessJoystick();
+        ProcessUARTCommand();
+        osDelay(100); // Small delay to prevent excessive polling
     }
 }
