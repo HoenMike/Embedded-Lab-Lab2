@@ -425,14 +425,14 @@
               <FilePath>.\uart.c</FilePath>
             </File>
             <File>
-              <FileName>uart.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\uart.h</FilePath>
-            </File>
-            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\uart.h</FilePath>
             </File>
           </Files>
         </Group>

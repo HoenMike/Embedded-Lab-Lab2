@@ -2,7 +2,7 @@ Dependencies for Project 'Lab2', Target 'Target_1': (DO NOT MODIFY !)
 CompilerVersion: 6220000::V6.22::ARMCLANG
 F (.\ADC.h)(0x670F207C)()
 F (.\Blinky.c)(0x670F2184)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__RTX -D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/LPC1768-I./RTE/_Target_1-IC:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/INC-IC:/Users/hoang/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.7.2/Device/Include-D__UVISION_VERSION="541" -DLPC175x_6x -D_RTE_-o ./objects/blinky.o -MMD)
-F (.\Joystick.c)(0x670F2109)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__RTX -D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/LPC1768-I./RTE/_Target_1-IC:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/INC-IC:/Users/hoang/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.7.2/Device/Include-D__UVISION_VERSION="541" -DLPC175x_6x -D_RTE_-o ./objects/joystick.o -MMD)
+F (.\Joystick.c)(0x670F3764)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__RTX -D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/LPC1768-I./RTE/_Target_1-IC:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/INC-IC:/Users/hoang/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.7.2/Device/Include-D__UVISION_VERSION="541" -DLPC175x_6x -D_RTE_-o ./objects/joystick.o -MMD)
 I (Joystick.h)(0x670F19F3)
 I (C:\Users\hoang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.2\Device\Include\LPC17xx.h)(0x6705E430)
 I (C:\Users\hoang\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x6705E615)
@@ -23,16 +23,15 @@ F (.\uart.c)(0x670F2664)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3
 I (C:\Users\hoang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.2\Device\Include\LPC17xx.h)(0x6705E430)
 I (C:\Users\hoang\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x6705E615)
 I (C:\Users\hoang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.2\Device\Include\system_LPC17xx.h)(0x6705E430)
-I (uart.h)(0x670F257C)
-F (.\uart.h)(0x670F257C)()
-F (.\main.c)(0x670F2CA5)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__RTX -D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/LPC1768-I./RTE/_Target_1-IC:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/INC-IC:/Users/hoang/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.7.2/Device/Include-D__UVISION_VERSION="541" -DLPC175x_6x -D_RTE_-o ./objects/main.o -MMD)
-I (C:\Users\hoang\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x6705E635)
+I (uart.h)(0x671851C5)
+F (.\main.c)(0x6718547D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__RTX -D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/LPC1768-I./RTE/_Target_1-IC:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/INC-IC:/Users/hoang/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.7.2/Device/Include-D__UVISION_VERSION="541" -DLPC175x_6x -D_RTE_-o ./objects/main.o -MMD)
 I (C:\Users\hoang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.2\Device\Include\LPC17xx.h)(0x6705E430)
 I (C:\Users\hoang\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x6705E615)
 I (C:\Users\hoang\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.2\Device\Include\system_LPC17xx.h)(0x6705E430)
-I (uart.h)(0x670F257C)
-I (Led.h)(0x670F1A30)
-I (Joystick.h)(0x670F19F3)
+I (ADC.h)(0x670F207C)
+I (led.h)(0x670F1A30)
+I (uart.h)(0x671851C5)
+F (.\uart.h)(0x671851C5)()
 F (C:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/LIB/ARM/RTX_CM3.lib)(0x6705E635)()
 F (RTE/CMSIS/RTX_Conf_CM.c)(0x6705E635)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__RTX -D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/LPC1768-I./RTE/_Target_1-IC:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/INC-IC:/Users/hoang/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.7.2/Device/Include-D__UVISION_VERSION="541" -DLPC175x_6x -D_RTE_-o ./objects/rtx_conf_cm.o -MMD)
 I (C:\Users\hoang\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x6705E635)
