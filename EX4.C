@@ -65,7 +65,7 @@ void ProcessUARTCommand(void)
 int main(void)
 {
   char adcValueStr[10];
-
+  int preValue = 0;
   UART_Initialize(UART_BAUD_RATE);
   LedInitialize();
   Joystick_Initialize();
@@ -85,9 +85,16 @@ int main(void)
       while (!ADC_ConversionDone())
         ;
       int adcValue = ADC_GetValue();
-      UintToChar(adcValue, adcValueStr);
-      UART_Send(adcValueStr, strlen(adcValueStr));
-      UART_Send("\r\n", 2);
+
+      if (preValue != adcValue)
+      {
+        UintToChar(adcValue, adcValueStr);
+        UART_Send(adcValueStr, strlen(adcValueStr));
+        UART_Send("\r\n", 2);
+      }
+
+      if (adcValue != preValue)
+        preValue = adcValue;
     }
 
     // Process UART Commands

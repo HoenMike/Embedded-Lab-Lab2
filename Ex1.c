@@ -14,7 +14,7 @@ int main(void)
     // Initialize ADC, LEDs, and UART
     ADC_Initialize();
     LedInitialize();
-    UART_Initialize(UART_BAUD_RATE);
+    // UART_Initialize(UART_BAUD_RATE);
 
     while (1)
     {
@@ -28,16 +28,16 @@ int main(void)
         // Get ADC value
         int adcValue = ADC_GetValue();
 
-        // Debug: Send ADC value through UART
-        snprintf(buffer, BUFFER_SIZE, "%d\r\n", adcValue);
-        UART_Send(buffer, strlen(buffer));
+        // // Debug: Send ADC value through UART
+        // snprintf(buffer, BUFFER_SIZE, "%d\r\n", adcValue);
+        // UART_Send(buffer, strlen(buffer));
 
         // Display 8 high order bits on LEDs
         unsigned char ledValue = (adcValue >> 4) & 0xFF;
 
-        // Debug: Send LED value in decimal through UART
-        snprintf(buffer, BUFFER_SIZE, "%d\r\n", ledValue);
-        UART_Send(buffer, strlen(buffer));
+        // // Debug: Send LED value in decimal through UART
+        // snprintf(buffer, BUFFER_SIZE, "%d\r\n", ledValue);
+        // UART_Send(buffer, strlen(buffer));
 
         // Turn off all LEDs first
         for (int i = 0; i < 8; i++)

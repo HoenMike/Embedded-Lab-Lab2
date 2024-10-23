@@ -1,31 +1,28 @@
-#include "cmsis_os.h" // ARM::CMSIS:RTOS:Keil RTX
-#include "LPC17xx.h"  // Device header
+#include "LPC17xx.h"
+#include "ADC.h"
+#include "led.h"
 #include "uart.h"
-#include "Led.h"
 #include "Joystick.h"
-#include <string.h> // Include for strlen
+#include <string.h>
+#include <stdio.h>
+
+#define UART_BAUD_RATE 9600
 
 void ProcessJoystick(void)
 {
-    char *message;
-
     switch (Joystick_Get_Status())
     {
     case JOYSTICK_UP:
-        message = "IU\r\n";
-        UART_Send(message, strlen(message));
+        UART_Send("International University\r\n", 26);
         break;
     case JOYSTICK_DOWN:
-        message = "Electrical Engineering\r\n";
-        UART_Send(message, strlen(message));
+        UART_Send("Electrical Engineering\r\n", 24);
         break;
     case JOYSTICK_LEFT:
-        message = "Embedded System\r\n";
-        UART_Send(message, strlen(message));
+        UART_Send("Embedded System\r\n", 17);
         break;
     case JOYSTICK_RIGHT:
-        message = "Hoang, Phu\r\n"; // Replace with your actual name
-        UART_Send(message, strlen(message));
+        UART_Send("Your Name\r\n", 11); // Replace with your actual name
         break;
     case JOYSTICK_CENTER:
         // You can add functionality for the center button if needed
@@ -34,6 +31,11 @@ void ProcessJoystick(void)
         // No joystick action
         break;
     }
+}
+
+void UintToChar(int value, char *buffer)
+{
+    sprintf(buffer, "%d", value);
 }
 
 void ProcessUARTCommand(void)
@@ -62,14 +64,42 @@ void ProcessUARTCommand(void)
 
 int main(void)
 {
-    UART_Initialize(9600);
+    char adcValueStr[10];
+    int preValue = 0;
+    UART_Initialize(UART_BAUD_RATE);
     LedInitialize();
     Joystick_Initialize();
+    ADC_Initialize();
 
     while (1)
     {
-        ProcessJoystick();
+        // Process Joystick
+        if (Joystick_Get_Status() != JOYSTICK_CENTER)
+        {
+            ProcessJoystick();
+        }
+        else
+        {
+            // Process ADC
+            ADC_StartConversion();
+            while (!ADC_ConversionDone())
+                ;
+            int adcValue = ADC_GetValue();
+
+            if (preValue != adcValue)
+            {
+                UintToChar(adcValue, adcValueStr);
+                UART_Send(adcValueStr, strlen(adcValueStr));
+                UART_Send("\r\n", 2);
+            }
+
+            if (adcValue != preValue)
+                preValue = adcValue;
+        }
+
+        // Process UART Commands
         ProcessUARTCommand();
-        osDelay(100); // Small delay to prevent excessive polling
+
+        // osDelay(100); // Small delay to prevent excessive polling
     }
 }

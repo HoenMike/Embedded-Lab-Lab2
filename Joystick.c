@@ -24,5 +24,5 @@ Joystick_Status_Enum Joystick_Get_Status(void)
         return JOYSTICK_RIGHT;
     if (!(joystick_state & (1 << 20)))
         return JOYSTICK_CENTER;
-    return JOYSTICK_CENTER;
+    return -1;
 }
